@@ -1,0 +1,23 @@
+{% extends 'base/base.html' %}
+{% block title %}Registrar Mascota{% endblock %}
+{% block content %}
+<div class="container ">
+	<div class="col-md-6 formulario">
+	<form method="post">
+			<legend>Datos de mascota</legend> <!-- 	{{form.as_p }} pinta las etiquetas widgds-->
+				{% csrf_token %} 
+				{{form.as_p }}
+				<!--<label for="nombre">Nombre</label>{{ form.nombre }}	
+				<label for="sexo">sexo</label>{{ form.sexo }}	
+				<label for="edad">Edad</label>{{ form.edad_aproximada}}	
+				<label for="fecha">Fecha Rescate</label>{{ form.fecha_rescate}}	
+				<label for="adoptante">Adoptante</label>{{ form.persona }}	
+				<label for="adoptante">Vacunas</label class="label">{{ form.vacuna }}	-->
+		<button type="submit" class="btn btn-primary">Guardar</button>
+		<button type="reset" class="btn btn-info">Nuevo</button>
+		<a href="{% url 'mascota:mascota_list' %}" class="btn btn-danger">Cancelar</a>
+	
+	</form>
+</div>
+</div>
+{% endblock %}
